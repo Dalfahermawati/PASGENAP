@@ -44,6 +44,27 @@
         </div>
        <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
      </form>
+     
+     <a href="index.html">Daftar Data Absensi Siswa</a>
+   
+   <script type="module">
+     import { tambahAbsensi } from './main.js';
+
+     let tombolTambah = document.getElementById('tombol-tambah');
+     let elemenTanggal = document.getElementById('input-tanggal');
+     let elemenNis = document.getElementById('input-nis');
+     let elemenNama = document.getElementById('input-nama');
+     let elemenAlamat = document.getElementById('input-alamat');
+     let elemenNo.Tlpn = document.getElementById('input-noTlpn');
+     let elemenKelas = document.getElementById('input-kelas');
+let elemenKeterangan = document.getElementById('input-keterangan');
+
+     tombolTambah.addEventListener('click', async function (e) {
+       e.preventDefault();
+       await tambahAbsensi(elemenTanggal.value, elemenNis.value, elemenNama.value, elemenAlamat.value, elemenNo.Tlpn.value, elemenKelas.value, elemenKeterangan.value );
+       window.location.href = 'index.html'
+     })
+   </script>
 
 </body>
 
