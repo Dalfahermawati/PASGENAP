@@ -32,11 +32,11 @@
   <img src="loader.gif" style="width: 15em; display: block" id="loader">
   <a href="form-absensi-siswa.html">tambah data absensi siswa</a>
   <script type="module">
-    import { ambilDaftarAbsensi, formatAngka, hapusAbsensi } from './main.js';
+    import { ambilAbsensi, formatAngka, hapusAbsensi } from './main.js';
   
       $(document).ready(async function() {
         let elemenDaftar = $("#daftar-absensi > tbody");
-        let daftarAbsensi = await ambilDaftarAbsensi();
+        let daftarAbsensi = await ambilAbsensi();
         let nomor = 1;
         daftarAbsensi.forEach((data) => {
           elemenDaftar.append(
