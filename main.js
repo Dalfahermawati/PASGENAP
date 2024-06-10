@@ -21,3 +21,23 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+export async function ambilDaftarAbsensiSiswa() {
+  const refDokumen = collection(db, "Absensi_siswa");
+  const kueri = query(refDokumen, orderBy("alamat"));
+  const cuplikanKueri = await getDocs(kueri);
+  let hasil = [];
+  cuplikanKueri.forEach((dok) => {
+    hasil.push({
+      id: dok.id,
+      tanggal: dok.data().tanggal,
+      nis: dok.data().nis,
+      nama: dok.data().nama,
+      alamat: dok.data().alamat,
+      noTlpn: dok.data().noTlpn,
+      kelas: dok.data().kelas,
+      keterangan: dok.data().keterangan,
+    });
+  });
+  return hasil;
+}
