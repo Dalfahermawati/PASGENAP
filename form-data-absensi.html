@@ -31,7 +31,7 @@
           <input type="text" class="form-control" id="input-alamat">
         </div>
   <div class="mb-3">
-          <label class="form-label">No.Tlpn</label>
+          <label class="form-label">NoTlpn</label>
           <input type="text" class="form-control" id="input-noTlpn">
         </div>
   <div class="mb-3">
@@ -55,13 +55,13 @@
      let elemenNis = document.getElementById('input-nis');
      let elemenNama = document.getElementById('input-nama');
      let elemenAlamat = document.getElementById('input-alamat');
-     let elemenNo.Tlpn = document.getElementById('input-noTlpn');
+     let elemenNoTlpn = document.getElementById('input-noTlpn');
      let elemenKelas = document.getElementById('input-kelas');
 let elemenKeterangan = document.getElementById('input-keterangan');
 
      tombolTambah.addEventListener('click', async function (e) {
        e.preventDefault();
-       await tambahAbsensi(elemenTanggal.value, elemenNis.value, elemenNama.value, elemenAlamat.value, elemenNo.Tlpn.value, elemenKelas.value, elemenKeterangan.value );
+       await tambahAbsensi(elemenTanggal.value, elemenNis.value, elemenNama.value, elemenAlamat.value, elemenNoTlpn.value, elemenKelas.value, elemenKeterangan.value );
        window.location.href = 'index.html'
      })
    </script>
