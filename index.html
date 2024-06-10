@@ -30,13 +30,13 @@
     </tbody>
   </table>
   <img src="loader.gif" style="width: 15em; display: block" id="loader">
-  <a href="form-absensi-siswa.html">tambah data absensi siswa</a>
+  <a href="form-data-absensi.html">tambah data absensi siswa</a>
   <script type="module">
-    import { ambilAbsensi, formatAngka, hapusAbsensi } from './main.js';
+    import { ambilDaftarAbsensiSiswa, formatAngka, hapusAbsensi } from './main.js';
   
       $(document).ready(async function() {
-        let elemenDaftar = $("#daftar-absensi > tbody");
-        let daftarAbsensi = await ambilAbsensi();
+        let elemenDaftar = $("#daftar-absensi-siswa > tbody");
+        let daftarAbsensi = await ambilDaftarAbsensiSiswa();
         let nomor = 1;
         daftarAbsensi.forEach((data) => {
           elemenDaftar.append(
